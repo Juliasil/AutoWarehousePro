@@ -1,0 +1,2 @@
+class AutoWarehousePro < ApplicationRecord
+end
