@@ -1,12 +1,15 @@
 <h1><i class="fas fa-warehouse"></i>AutoWarehousePro</h1>
 
-<h2>Auto Galpões</h2>
+<h2>Auto warehouses</h2>
 
 <% @autowarehousepros.each do |auto_warehouse_pro| %>
   <p><%= auto_warehouse_pro.name %></p>
   <p>Código do Aeroporto: <%= auto_warehouse_pro.code %></p>
   <p>Área: <%= auto_warehouse_pro.area %></p>m²
   <p>Cidade: <%= auto_warehouse_pro.city %></p>
+<% end %>
 
+<% if @autowarehousepros.empty? %>
+<p>There are no registered warehouses</p>
 <% end %>
 
