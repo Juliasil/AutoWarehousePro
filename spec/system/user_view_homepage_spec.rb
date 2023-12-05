@@ -7,17 +7,29 @@ describe 'User viewing homepage' do
     # Arrange
     # Act
     visit root_path
+
     # Assert
     expect(page).to have_content('AutoWarehousePro')
   end
 
   it 'and sees Visitor viewing warehouses' do
     # Arrange
-    AutoWarehousePro.create(name: 'Galpão BH', code: 'SDU', area: 40_000, city: 'Belo Horizonte')
-    AutoWarehousePro.create(name: 'Galpão SC', code: 'GIG', area: 60_000, city: 'Santa Catarina')
+    AutoWarehousePro.create(
+      name: 'Galpão BH',
+      code: 'SDU',
+      area: 40_000,
+      city: 'Belo Horizonte'
+    )
+    AutoWarehousePro.create(
+      name: 'Galpão SC',
+      code: 'GIG',
+      area: 60_000,
+      city: 'Santa Catarina'
+    )
 
     # Act
     visit root_path
+
     # Assert
     expect(page).not_to have_content('There are no registered warehouses')
     expect(page).to have_content('Galpão BH')
